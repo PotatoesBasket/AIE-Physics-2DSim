@@ -1,0 +1,30 @@
+﻿  Analytic.cpp
+  BallsInABoxApp.cpp
+  BlankApp.cpp
+  Box.cpp
+  Circle.cpp
+  PhysicsScene.cpp
+C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\PhysicsScene.cpp(76,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Plane.cpp
+  Rigidbody.cpp
+  RocketApp.cpp
+  Spring.cpp
+C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\Spring.cpp(46,20): warning C4018: '<=': signed/unsigned mismatch
+  SpringsApp.cpp
+  main.cpp
+  Generating code
+  0 of 1278 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+bootstrap.lib(Gizmos.obj) : warning LNK4099: PDB 'Bootstrap.pdb' was not found with 'bootstrap.lib(Gizmos.obj)' or at 'C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\bin\Release\Bootstrap.pdb'; linking object as if no debug info
+bootstrap.lib(Input.obj) : warning LNK4099: PDB 'Bootstrap.pdb' was not found with 'bootstrap.lib(Input.obj)' or at 'C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\bin\Release\Bootstrap.pdb'; linking object as if no debug info
+bootstrap.lib(Application.obj) : warning LNK4099: PDB 'Bootstrap.pdb' was not found with 'bootstrap.lib(Application.obj)' or at 'C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\bin\Release\Bootstrap.pdb'; linking object as if no debug info
+bootstrap.lib(Renderer2D.obj) : warning LNK4099: PDB 'Bootstrap.pdb' was not found with 'bootstrap.lib(Renderer2D.obj)' or at 'C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\bin\Release\Bootstrap.pdb'; linking object as if no debug info
+bootstrap.lib(gl_core_4_4.obj) : warning LNK4099: PDB 'Bootstrap.pdb' was not found with 'bootstrap.lib(gl_core_4_4.obj)' or at 'C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\bin\Release\Bootstrap.pdb'; linking object as if no debug info
+bootstrap.lib(imgui_glfw3.obj) : warning LNK4099: PDB 'Bootstrap.pdb' was not found with 'bootstrap.lib(imgui_glfw3.obj)' or at 'C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\bin\Release\Bootstrap.pdb'; linking object as if no debug info
+bootstrap.lib(imgui.obj) : warning LNK4099: PDB 'Bootstrap.pdb' was not found with 'bootstrap.lib(imgui.obj)' or at 'C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\bin\Release\Bootstrap.pdb'; linking object as if no debug info
+bootstrap.lib(Texture.obj) : warning LNK4099: PDB 'Bootstrap.pdb' was not found with 'bootstrap.lib(Texture.obj)' or at 'C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\bin\Release\Bootstrap.pdb'; linking object as if no debug info
+bootstrap.lib(Font.obj) : warning LNK4099: PDB 'Bootstrap.pdb' was not found with 'bootstrap.lib(Font.obj)' or at 'C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\bin\Release\Bootstrap.pdb'; linking object as if no debug info
+bootstrap.lib(imgui_draw.obj) : warning LNK4099: PDB 'Bootstrap.pdb' was not found with 'bootstrap.lib(imgui_draw.obj)' or at 'C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\bin\Release\Bootstrap.pdb'; linking object as if no debug info
+  aieProject2D.vcxproj -> C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\bin\Release\2D.exe
