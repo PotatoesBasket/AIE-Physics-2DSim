@@ -22,8 +22,11 @@ public:
 
 	const ShapeType getShapeType() { return m_shapeType; }
 
-	bool isKinematic = false;
+	virtual bool isKinematic() { return m_isKinematic; }
+	void setKinematic(bool state) { m_isKinematic = state; }
 
 protected:
 	const ShapeType m_shapeType;
+
+	bool m_isKinematic = false;
 };

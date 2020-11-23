@@ -26,7 +26,7 @@ protected:
 
 	PhysicsScene m_scene = PhysicsScene(glm::vec2(0, -500));
 
-	Box m_rocket = Box(glm::vec2(0, 0), 1000, 75, 125, glm::vec4(1, 0, 0, 1));
+	Box m_rocket = Box(glm::vec2(0, 0), 0, 1000, glm::vec2(75, 125), glm::vec4(1, 0, 0, 1));
 	std::vector<Circle*> m_particles;
 	std::vector<Circle*>::iterator m_it;
 	float m_thrust = 700;

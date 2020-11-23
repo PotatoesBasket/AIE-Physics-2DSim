@@ -4,18 +4,23 @@
 class Box : public Rigidbody
 {
 public:
-	Box(const glm::vec2& position, float mass, float width, float height, const glm::vec4& color, const glm::vec2& initialVelocity = glm::vec2(0));
+	Box();
+	Box(const glm::vec2& position, float rotation, float mass, glm::vec2 extents, const glm::vec4& color,
+		const glm::vec2& initialVelocity = glm::vec2(0), float initialRotVel = 0);
 	~Box() {}
 
+	void fixedUpdate(float fixedTimeStep, const glm::vec2& gravity) override;
 	void draw() override;
 
-	float getWidth() { return m_width; }
-	float getHeight() { return m_height; }
-
-public:
-	glm::vec4 color;
+	bool checkCorners(const Box& other, glm::vec2& contact, int& noOfContacts, float& penetration, glm::vec2& edgeNormal);
 
 protected:
-	float m_width;
-	float m_height;
+	void updateLocalAxes();
+
+public:
+	glm::vec2 extents;
+	glm::vec4 color;
+
+	glm::vec2 localX = glm::vec2(0);
+	glm::vec2 localY = glm::vec2(0);
 };

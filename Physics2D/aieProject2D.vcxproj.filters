@@ -10,14 +10,17 @@
     <Filter Include="Objects">
       <UniqueIdentifier>{75f5b352-2b4e-402d-a72e-23485e2dcbd4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Objects\Shapes">
-      <UniqueIdentifier>{4606132f-4f2a-4509-8f28-6a8b11e170ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Camera">
       <UniqueIdentifier>{a0549334-ccc0-4a57-8611-6cd0abdb8c48}</UniqueIdentifier>
     </Filter>
     <Filter Include="Analytics">
       <UniqueIdentifier>{ee6a086e-07da-496c-a90e-77bd4645de69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Physics Objects">
+      <UniqueIdentifier>{4606132f-4f2a-4509-8f28-6a8b11e170ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Physics Objects\Rigidbodies">
+      <UniqueIdentifier>{536b2400-2dda-4ff0-9144-27423c8a3e26}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,20 +30,11 @@
     <ClCompile Include="PhysicsScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="Rigidbody.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>Camera</Filter>
     </ClCompile>
     <ClCompile Include="FlyCamera.cpp">
       <Filter>Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="Box.cpp">
-      <Filter>Objects\Shapes</Filter>
-    </ClCompile>
-    <ClCompile Include="Plane.cpp">
-      <Filter>Objects\Shapes</Filter>
     </ClCompile>
     <ClCompile Include="Analytic.cpp">
       <Filter>Analytics</Filter>
@@ -58,21 +52,28 @@
       <Filter>App</Filter>
     </ClCompile>
     <ClCompile Include="Spring.cpp">
-      <Filter>Objects\Shapes</Filter>
+      <Filter>Objects\Physics Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Box.cpp">
+      <Filter>Objects\Physics Objects\Rigidbodies</Filter>
     </ClCompile>
     <ClCompile Include="Circle.cpp">
-      <Filter>Objects\Shapes</Filter>
+      <Filter>Objects\Physics Objects\Rigidbodies</Filter>
     </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>Objects\Physics Objects\Rigidbodies</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Rigidbody.cpp">
+      <Filter>Objects\Physics Objects\Rigidbodies</Filter>
+    </ClCompile>
+    <ClCompile Include="Collisions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PhysicsScene.h">
       <Filter>Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsObject.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Rigidbody.h">
-      <Filter>Objects</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Camera</Filter>
@@ -82,12 +83,6 @@
     </ClInclude>
     <ClInclude Include="Frustum.h">
       <Filter>Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Box.h">
-      <Filter>Objects\Shapes</Filter>
-    </ClInclude>
-    <ClInclude Include="Plane.h">
-      <Filter>Objects\Shapes</Filter>
     </ClInclude>
     <ClInclude Include="FrustumPlane.h">
       <Filter>Camera</Filter>
@@ -108,10 +103,26 @@
       <Filter>App</Filter>
     </ClInclude>
     <ClInclude Include="Spring.h">
-      <Filter>Objects\Shapes</Filter>
+      <Filter>Objects\Physics Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Box.h">
+      <Filter>Objects\Physics Objects\Rigidbodies</Filter>
     </ClInclude>
     <ClInclude Include="Circle.h">
-      <Filter>Objects\Shapes</Filter>
+      <Filter>Objects\Physics Objects\Rigidbodies</Filter>
     </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Objects\Physics Objects\Rigidbodies</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Rigidbody.h">
+      <Filter>Objects\Physics Objects\Rigidbodies</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsObject.h">
+      <Filter>Objects\Physics Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Collisions.h" />
   </ItemGroup>
 </Project>

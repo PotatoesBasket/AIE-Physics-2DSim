@@ -95,8 +95,10 @@
     <ClCompile Include="Analytic.cpp" />
     <ClCompile Include="BallsInABoxApp.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="FlyCamera.cpp" />
     <ClCompile Include="BlankApp.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PhysicsScene.cpp" />
     <ClCompile Include="Plane.cpp" />
@@ -111,10 +113,12 @@
     <ClInclude Include="Analytic.h" />
     <ClInclude Include="BallsInABoxApp.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Collisions.h" />
     <ClInclude Include="FlyCamera.h" />
     <ClInclude Include="Frustum.h" />
     <ClInclude Include="FrustumPlane.h" />
     <ClInclude Include="BlankApp.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="PhysicsObject.h" />
     <ClInclude Include="PhysicsScene.h" />
     <ClInclude Include="Plane.h" />

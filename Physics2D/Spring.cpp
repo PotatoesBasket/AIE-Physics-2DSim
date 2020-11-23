@@ -30,8 +30,8 @@ void Spring::fixedUpdate(float fixedTimeStep, const glm::vec2& gravity)
 
 	glm::vec2 force = springVec * springCoefficient * x - damping * v;
 
-	body1->applyForce(-force * fixedTimeStep);
-	body2->applyForce(force * fixedTimeStep);
+	body1->applyForce(-force * fixedTimeStep, glm::vec2(0));
+	body2->applyForce(force * fixedTimeStep, glm::vec2(0));
 }
 
 void Spring::draw()

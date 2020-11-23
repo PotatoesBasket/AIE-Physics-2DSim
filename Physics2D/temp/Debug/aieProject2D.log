@@ -1,3 +1,0 @@
-﻿  BallsInABoxApp.cpp
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  aieProject2D.vcxproj -> C:\Users\Faint\Documents\Visual Studio 2019\Projects\Adv Dip\4. Physics\Physics\Physics2D\bin\Debug\2D.exe

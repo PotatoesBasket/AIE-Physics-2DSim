@@ -14,7 +14,7 @@ bool SpringsApp::startup()
 	m_input = aie::Input::getInstance();
 	m_renderer = std::make_unique<aie::Renderer2D>();
 
-	ball2.isKinematic = true;
+	ball2.setKinematic(true);
 
 	m_scene.addActor(&ball1);
 	m_scene.addActor(&ball2);

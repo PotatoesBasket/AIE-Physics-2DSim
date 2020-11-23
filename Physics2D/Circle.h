@@ -4,7 +4,9 @@
 class Circle : public Rigidbody
 {
 public:
-	Circle(const glm::vec2& position, float mass, float radius, const glm::vec4& color, const glm::vec2& initialVelocity = glm::vec2(0));
+	Circle();
+	Circle(const glm::vec2& position, float rotation, float mass, float radius, const glm::vec4& color,
+		const glm::vec2& initialVelocity = glm::vec2(0), float initialRotVel = 0);
 	~Circle() {}
 
 	void draw() override;

@@ -5,6 +5,7 @@
 #include <Font.h>
 #include <Input.h>
 #include <Gizmos.h>
+#include <iostream>
 
 bool BallsInABoxApp::startup()
 {
@@ -13,36 +14,22 @@ bool BallsInABoxApp::startup()
 	m_input = aie::Input::getInstance();
 	m_renderer = std::make_unique<aie::Renderer2D>();
 
-	m_ball1.elasticity = 0.8f;
-	m_ball2.elasticity = 0.8f;
-	m_ball3.elasticity = 0.8f;
-	m_ball4.elasticity = 0.8f;
-	m_ball5.elasticity = 0.8f;
-	m_ball6.elasticity = 0.8f;
+	m_scene.addActor(&m_box1);
+	m_scene.addActor(&m_box2);
+	m_scene.addActor(&m_box3);
+	m_scene.addActor(&m_box4);
+
+	m_scene.addActor(&m_wall1);
+	m_scene.addActor(&m_wall2);
+	m_scene.addActor(&m_wall3);
+	m_scene.addActor(&m_wall4);
 
 	m_scene.addActor(&m_ball1);
 	m_scene.addActor(&m_ball2);
 	m_scene.addActor(&m_ball3);
 	m_scene.addActor(&m_ball4);
-	m_scene.addActor(&m_ball5);
-	m_scene.addActor(&m_ball6);
-
-	m_ball7.elasticity = 0.1f;
-	m_ball8.elasticity = 0.1f;
-	m_ball9.elasticity = 0.1f;
-	m_ball10.elasticity = 0.1f;
-	m_ball11.elasticity = 0.1f;
-	m_ball12.elasticity = 0.1f;
-	m_ball13.elasticity = 0.1f;
-	m_ball14.elasticity = 0.1f;
-	m_ball15.elasticity = 0.1f;
-	m_ball16.elasticity = 0.1f;
-	m_ball17.elasticity = 0.1f;
-	m_ball18.elasticity = 0.1f;
-	m_ball19.elasticity = 0.1f;
-
-	m_ball13.isKinematic = true;
-	m_ball19.isKinematic = true;
+	//m_scene.addActor(&m_ball5);
+	//m_scene.addActor(&m_ball6);
 
 	m_scene.addActor(&m_ball7);
 	m_scene.addActor(&m_ball8);
@@ -58,19 +45,6 @@ bool BallsInABoxApp::startup()
 	m_scene.addActor(&m_ball18);
 	m_scene.addActor(&m_ball19);
 
-	m_spring1.width = 10;
-	m_spring2.width = 10;
-	m_spring3.width = 10;
-	m_spring4.width = 10;
-	m_spring5.width = 10;
-	m_spring6.width = 10;
-	m_spring7.width = 10;
-	m_spring8.width = 10;
-	m_spring9.width = 10;
-	m_spring10.width = 10;
-	m_spring11.width = 10;
-	m_spring12.width = 10;
-
 	m_scene.addActor(&m_spring1);
 	m_scene.addActor(&m_spring2);
 	m_scene.addActor(&m_spring3);
@@ -84,10 +58,65 @@ bool BallsInABoxApp::startup()
 	m_scene.addActor(&m_spring11);
 	m_scene.addActor(&m_spring12);
 
-	m_scene.addActor(&m_plane1);
-	m_scene.addActor(&m_plane2);
-	m_scene.addActor(&m_plane3);
-	m_scene.addActor(&m_plane4);
+	//m_scene.addActor(&m_plane1);
+	//m_scene.addActor(&m_plane2);
+	//m_scene.addActor(&m_plane3);
+	//m_scene.addActor(&m_plane4);
+
+	//---
+
+	m_box1.elasticity = 0.5f;
+	m_box2.elasticity = 0.5f;
+	m_box3.elasticity = 0.5f;
+
+	m_ball1.elasticity = 0.8f;
+	//m_ball2.elasticity = 0.8f;
+	m_ball3.elasticity = 0.8f;
+	m_ball4.elasticity = 0.8f;
+	m_ball5.elasticity = 0.8f;
+	m_ball6.elasticity = 0.8f;
+
+	m_ball7.elasticity = 0.1f;
+	m_ball8.elasticity = 0.1f;
+	m_ball9.elasticity = 0.1f;
+	m_ball10.elasticity = 0.1f;
+	m_ball11.elasticity = 0.1f;
+	m_ball12.elasticity = 0.1f;
+	m_ball13.elasticity = 0.1f;
+	m_ball14.elasticity = 0.1f;
+	m_ball15.elasticity = 0.1f;
+	m_ball16.elasticity = 0.1f;
+	m_ball17.elasticity = 0.1f;
+	m_ball18.elasticity = 0.1f;
+	m_ball19.elasticity = 0.1f;
+
+	m_plane1.elasticity = 0.5f;
+	m_plane2.elasticity = 0.5f;
+	m_plane3.elasticity = 0.5f;
+	m_plane4.elasticity = 0.5f;
+
+	m_box3.setKinematic(true);
+
+	m_wall1.setKinematic(true);
+	m_wall2.setKinematic(true);
+	m_wall3.setKinematic(true);
+	m_wall4.setKinematic(true);
+
+	m_ball13.setKinematic(true);
+	m_ball19.setKinematic(true);
+
+	m_spring1.width = 10;
+	m_spring2.width = 10;
+	m_spring3.width = 10;
+	m_spring4.width = 10;
+	m_spring5.width = 10;
+	m_spring6.width = 10;
+	m_spring7.width = 10;
+	m_spring8.width = 10;
+	m_spring9.width = 10;
+	m_spring10.width = 10;
+	m_spring11.width = 10;
+	m_spring12.width = 10;
 
 	return true;
 }
@@ -105,25 +134,42 @@ void BallsInABoxApp::update(float deltaTime)
 	float xDelta = 0;
 	float yDelta = 0;
 
-	if (m_input->isKeyDown(aie::INPUT_KEY_RIGHT))
+	//if (m_input->isKeyDown(aie::INPUT_KEY_RIGHT))
+	//{
+	//	camXOffset += camSpeed * deltaTime;
+	//	xDelta += camSpeed * deltaTime;
+	//}
+	//if (m_input->isKeyDown(aie::INPUT_KEY_LEFT))
+	//{
+	//	camXOffset -= camSpeed * deltaTime;
+	//	xDelta -= camSpeed * deltaTime;
+	//}
+	//if (m_input->isKeyDown(aie::INPUT_KEY_UP))
+	//{
+	//	camYOffset += camSpeed * deltaTime;
+	//	yDelta += camSpeed * deltaTime;
+	//}
+	//if (m_input->isKeyDown(aie::INPUT_KEY_DOWN))
+	//{
+	//	camYOffset -= camSpeed * deltaTime;
+	//	yDelta -= camSpeed * deltaTime;
+	//}
+
+	if (m_input->wasKeyPressed(aie::INPUT_KEY_RIGHT))
 	{
-		camXOffset += camSpeed * deltaTime;
-		xDelta += camSpeed * deltaTime;
+		m_scene.gravity = glm::vec2(500, 0);
 	}
-	if (m_input->isKeyDown(aie::INPUT_KEY_LEFT))
+	if (m_input->wasKeyPressed(aie::INPUT_KEY_LEFT))
 	{
-		camXOffset -= camSpeed * deltaTime;
-		xDelta -= camSpeed * deltaTime;
+		m_scene.gravity = glm::vec2(-500, 0);
 	}
-	if (m_input->isKeyDown(aie::INPUT_KEY_UP))
+	if (m_input->wasKeyPressed(aie::INPUT_KEY_UP))
 	{
-		camYOffset += camSpeed * deltaTime;
-		yDelta += camSpeed * deltaTime;
+		m_scene.gravity = glm::vec2(0, 500);
 	}
-	if (m_input->isKeyDown(aie::INPUT_KEY_DOWN))
+	if (m_input->wasKeyPressed(aie::INPUT_KEY_DOWN))
 	{
-		camYOffset -= camSpeed * deltaTime;
-		yDelta -= camSpeed * deltaTime;
+		m_scene.gravity = glm::vec2(0, -500);
 	}
 
 	if (m_input->wasKeyPressed(aie::INPUT_KEY_SPACE))

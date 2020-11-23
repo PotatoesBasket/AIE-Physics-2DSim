@@ -26,7 +26,7 @@ protected:
 
 	PhysicsScene m_scene = PhysicsScene(glm::vec2(0, -500));
 
-	Circle ball1 = Circle(glm::vec2(-250, 150), 10, 40, glm::vec4(1, 0, 1, 1));
-	Circle ball2 = Circle(glm::vec2(100, 0), 10, 40, glm::vec4(0, 1, 1, 1));
+	Circle ball1 = Circle(glm::vec2(-250, 150), 0, 10, 40, glm::vec4(1, 0, 1, 1));
+	Circle ball2 = Circle(glm::vec2(100, 0), 0, 10, 40, glm::vec4(0, 1, 1, 1));
 	Spring spring = Spring(&ball1, &ball2, 500, 50, 200);
 };

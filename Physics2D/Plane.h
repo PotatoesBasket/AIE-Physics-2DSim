@@ -1,22 +1,20 @@
 #pragma once
-#include <glm/glm.hpp>
-#include "PhysicsObject.h"
+#include "Rigidbody.h"
 
-class Plane : public PhysicsObject
+class Plane : public Rigidbody
 {
 public:
-	Plane() : normal(0), distance(0), PhysicsObject(ShapeType::PLANE) {}
-	Plane(float normalX, float normalY, float normalZ, float dist) :
-		normal(glm::vec3(normalX, normalY, normalZ)), distance(dist), PhysicsObject(ShapeType::PLANE) {}
-	Plane(glm::vec3 normal, float dist) : normal(normal), distance(dist), PhysicsObject(ShapeType::PLANE) {}
-	Plane(glm::vec4 plane) : normal(plane), distance(plane.w), PhysicsObject(ShapeType::PLANE) {}
+	Plane();
+	Plane(glm::vec2 normal, float dist);
 	~Plane() {}
 
 	void fixedUpdate(float fixedTimeStep, const glm::vec2& gravity) override {}
 	void draw() override;
 
+	void resolveCollision(Rigidbody* other, const glm::vec2& contact, glm::vec2* collisionNormal) override;
+
 public:
-	glm::vec3 normal;
+	glm::vec2 normal;
 	float distance; // from world origin
 
 	// draw info
